@@ -16,7 +16,7 @@ deployment:
     hub:
       branch: /.*/
       commands:
-        - docker login -u DOCKER_HUB_USER_ID -p $DOCKER_HUB_PWD -e $DOCKER_HUB_EMAIL
+        - docker login -u $DOCKER_HUB_USER_ID -p $DOCKER_HUB_PWD -e $DOCKER_HUB_EMAIL
         - docker tag dockerapp_dockerapp $DOCKER_HUB_USER_ID/dockerapp:CIRCLE_SH1
         - docker tag dockerapp_dockerapp $DOCKER_HUB_USER_ID/dockerapp:latest
         - docker push $DOCKER_HUB_USER_ID/dockerapp:CIRCLE_SH1
